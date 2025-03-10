@@ -18,7 +18,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
           <collectionProp name="Arguments.arguments">
             <elementProp name="HOME" elementType="Argument">
               <stringProp name="Argument.name">HOME</stringProp>
@@ -33,7 +33,7 @@
           </collectionProp>
         </Arguments>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">${HOME}/Documents/GitHub/contactlist-jmeter-tests/src/serverconfig/serverconfig.csv</stringProp>
@@ -43,6 +43,18 @@
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
           <stringProp name="variableNames">protocol,server,username,password</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config - Data">
+          <stringProp name="filename">/Users/maniziva/Documents/GitHub/contactlist-jmeter-tests/src/data/ContactData.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">firstName,lastName,birthdate,email,phone,street1,street2,city,stateProvince,postalCode,country</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
@@ -118,17 +130,17 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;firstName&quot;: &quot;Joh2n&quot;,&#xd;
-    &quot;lastName&quot;: &quot;Doe&quot;,&#xd;
-    &quot;birthdate&quot;: &quot;1970-01-01&quot;,&#xd;
-    &quot;email&quot;: &quot;jdoe@fake.com&quot;,&#xd;
-    &quot;phone&quot;: &quot;8005555555&quot;,&#xd;
-    &quot;street1&quot;: &quot;1 Main St.&quot;,&#xd;
-    &quot;street2&quot;: &quot;Apartment A&quot;,&#xd;
-    &quot;city&quot;: &quot;Anytown&quot;,&#xd;
-    &quot;stateProvince&quot;: &quot;KS&quot;,&#xd;
-    &quot;postalCode&quot;: &quot;12345&quot;,&#xd;
-    &quot;country&quot;: &quot;USA&quot;&#xd;
+    &quot;firstName&quot;: ${firstName},&#xd;
+    &quot;lastName&quot;: ${lastName},&#xd;
+    &quot;birthdate&quot;: ${birthdate},&#xd;
+    &quot;email&quot;: ${email},&#xd;
+    &quot;phone&quot;: ${phone},&#xd;
+    &quot;street1&quot;: ${street1},&#xd;
+    &quot;street2&quot;: ${street2},&#xd;
+    &quot;city&quot;: ${city},&#xd;
+    &quot;stateProvince&quot;: ${stateProvince},&#xd;
+    &quot;postalCode&quot;: ${postalCode},&#xd;
+    &quot;country&quot;: ${country}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -156,7 +168,7 @@
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Logout">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Logout" enabled="true">
             <stringProp name="HTTPSampler.path">users/logout</stringProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -224,7 +236,7 @@
             <stringProp name="filename"></stringProp>
           </ResultCollector>
           <hashTree/>
-          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
             <boolProp name="displayJMeterProperties">false</boolProp>
             <boolProp name="displayJMeterVariables">true</boolProp>
             <boolProp name="displaySystemProperties">false</boolProp>
