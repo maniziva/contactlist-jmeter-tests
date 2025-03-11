@@ -53,6 +53,11 @@ This repository contains JMeter test scripts for performance and API testing of 
 - **DELETE /contacts/{id}** → Deletes a contact  
 - **Assertions**: Ensures correct response codes & data validation  
 
+### **✅ 4. User List CRUD Operations**  
+- **GET /users/me** → Fetches user data  
+- **PATCH /users/me** → Updates a user data  
+- **Assertions**: Ensures correct response codes & data validation  
+
 ---
 
 ## **🔍 Assertions Used**  
